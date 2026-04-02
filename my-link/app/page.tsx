@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Mail, Globe, Terminal } from "lucide-react";
+import { Mail, Globe, Terminal, ArrowRight } from "lucide-react";
 
-// Custom SVG Icons for Brands
+// Local SVG Icons for Neobrutalism (Black fills)
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
     <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
@@ -22,82 +22,95 @@ const TwitterIcon = ({ className }: { className?: string }) => (
 
 export default function Profile() {
   const profile = {
-    name: "Lucas",
-    role: "Software Developer",
-    bio: "Building innovative and scalable applications. Passionate about AI, web development, and crafting elegant code.",
+    name: "LUCAS",
+    role: "SOFTWARE ENGINEER",
+    bio: "Building bold digital experiences. Blending stark engineering with vibrant logic.",
     avatar: "/avatar.png",
   };
 
   const links = [
-    { name: "Portfolio", url: "#", icon: <Globe className="w-5 h-5 group-hover:text-amber-400 transition-colors" /> },
-    { name: "GitHub", url: "https://github.com/Cyan0101", icon: <GithubIcon className="w-5 h-5 group-hover:text-emerald-400 transition-colors" /> },
-    { name: "LinkedIn", url: "#", icon: <LinkedinIcon className="w-5 h-5 group-hover:text-blue-400 transition-colors" /> },
-    { name: "Twitter", url: "#", icon: <TwitterIcon className="w-5 h-5 group-hover:text-sky-400 transition-colors" /> },
-    { name: "Email Me", url: "mailto:hello@example.com", icon: <Mail className="w-5 h-5 group-hover:text-rose-400 transition-colors" /> },
+    { name: "Portfolio", url: "#", icon: <Globe className="w-6 h-6 shrink-0" />, color: "bg-blue-300" },
+    { name: "GitHub", url: "https://github.com/Cyan0101", icon: <GithubIcon className="w-6 h-6 shrink-0" />, color: "bg-emerald-300" },
+    { name: "LinkedIn", url: "#", icon: <LinkedinIcon className="w-6 h-6 shrink-0" />, color: "bg-sky-300" },
+    { name: "Twitter", url: "#", icon: <TwitterIcon className="w-6 h-6 shrink-0" />, color: "bg-amber-300" },
+    { name: "Email Me", url: "mailto:hello@example.com", icon: <Mail className="w-6 h-6 shrink-0" />, color: "bg-rose-300" },
   ];
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center p-4 selection:bg-indigo-500/30 overflow-hidden bg-[#0a0a0c]">
-      {/* Background ambient glow effect */}
-      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-600/15 rounded-full blur-[120px] -z-10 animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-purple-600/15 rounded-full blur-[100px] -z-10 pointer-events-none" />
+    <div className="min-h-screen bg-[#fdfbf7] p-6 lg:p-12 font-sans selection:bg-pink-300">
+      <nav className="max-w-6xl mx-auto flex justify-between items-center mb-16 brutal-box bg-white px-6 py-4 rounded-xl">
+        <div className="font-extrabold text-2xl tracking-tighter">LV.</div>
+        <button className="brutal-box bg-yellow-300 text-black font-bold px-6 py-2 rounded-md">
+          HIRE ME
+        </button>
+      </nav>
 
-      <main className="w-full max-w-[420px] flex flex-col items-center animate-fade-in-up mt-12 mb-12">
-        {/* Profile Avatar */}
-        <div className="relative group perspective">
-          <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-full opacity-50 group-hover:opacity-100 blur transition duration-500"></div>
-          <Image
-            src={profile.avatar}
-            alt={profile.name}
-            width={128}
-            height={128}
-            priority
-            className="relative rounded-full object-cover border-2 border-zinc-900 shadow-2xl transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-
-        {/* Profile Info */}
-        <div className="mt-8 text-center flex flex-col items-center">
-          <h1 className="text-3xl font-bold tracking-tight text-white flex items-center justify-center gap-2">
-            {profile.name}
-          </h1>
-          <div className="mt-3 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-medium text-sm flex items-center gap-2 shadow-[0_0_15px_rgba(99,102,241,0.1)]">
-            <Terminal className="w-4 h-4" /> {profile.role}
+      <main className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+        {/* Left Column: Hero Copy */}
+        <div className="col-span-1 lg:col-span-7 flex flex-col justify-center">
+          <div className="inline-flex brutal-box bg-indigo-300 px-4 py-2 font-bold mb-6 rounded-md w-max items-center gap-2">
+            <Terminal className="w-5 h-5 text-black" />
+            STATUS: ACTIVE
           </div>
-          <p className="mt-5 text-zinc-400 text-[15px] leading-relaxed max-w-[320px]">
-             {profile.bio}
+          
+          <h1 className="text-5xl lg:text-7xl font-black uppercase leading-none tracking-tighter mb-6">
+            HELLO, I'M <br/>
+            <span className="bg-yellow-300 px-2 leading-none inline-block mt-2 brutal-box">{profile.name}</span>.<br />
+            {profile.role}.
+          </h1>
+          
+          <p className="text-xl font-bold text-gray-800 max-w-lg mb-10 leading-snug border-l-4 border-black pl-4">
+            {profile.bio}
           </p>
         </div>
 
-        {/* Links Section */}
-        <div className="w-full mt-10 flex flex-col space-y-4">
+        {/* Right Column: Profile Image / Main Feature */}
+        <div className="col-span-1 lg:col-span-5 flex items-center justify-center lg:justify-end">
+          <div className="relative w-full max-w-sm aspect-square">
+            {/* The brutal box image container */}
+            <div className="absolute inset-0 brutal-box bg-pink-300 rounded-3xl z-0 translate-x-4 translate-y-4"></div>
+            <Image
+              src={profile.avatar}
+              alt={profile.name}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover rounded-3xl border-4 border-black z-10 relative bg-white"
+            />
+          </div>
+        </div>
+      </main>
+
+      {/* Grid Links Section */}
+      <section className="max-w-6xl mx-auto mt-20">
+        <h2 className="text-3xl font-black uppercase mb-8 inline-block brutal-box bg-white px-4 py-2">Find Me Here</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {links.map((link) => (
             <a
               key={link.name}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-panel group relative flex items-center w-full p-4 rounded-2xl text-zinc-200 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] hover:border-white/20 overflow-hidden"
+              className={`brutal-box flex items-center p-6 ${link.color} rounded-2xl group text-black cursor-pointer`}
             >
-              {/* Subtle hover gradient spread */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-[150%] skew-x-12 group-hover:animate-shine" />
-              
-              <div className="z-10 flex bg-white/5 p-2 rounded-xl text-zinc-300 group-hover:bg-white/10 transition-colors shadow-sm">
+              <div className="bg-white border-4 border-black p-3 rounded-full mr-4 group-hover:-rotate-12 transition-transform">
                 {link.icon}
               </div>
-              <div className="z-10 flex-1 text-center pr-8">
-                <span className="font-semibold tracking-wide text-[16px] group-hover:text-white transition-colors">
-                  {link.name}
-                </span>
+              <div className="flex-1">
+                <span className="font-extrabold text-xl lg:text-2xl uppercase tracking-tighter block">{link.name}</span>
               </div>
+              <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
             </a>
           ))}
         </div>
-      </main>
+      </section>
 
       {/* Footer */}
-      <footer className="mt-auto py-8 text-center text-xs text-zinc-500 font-medium">
-        <p>© {new Date().getFullYear()} {profile.name}. Designed with care.</p>
+      <footer className="max-w-6xl mx-auto mt-24 mb-6">
+        <div className="brutal-box bg-white p-6 rounded-xl flex flex-col md:flex-row justify-between items-center text-sm font-bold uppercase">
+          <p>© {new Date().getFullYear()} {profile.name}. Neobrutalism UI.</p>
+          <p className="mt-4 md:mt-0">Built heavily, designed robustly.</p>
+        </div>
       </footer>
     </div>
   );
